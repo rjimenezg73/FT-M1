@@ -15,24 +15,16 @@ function BinarioADecimal(num) {
 
 function DecimalABinario(num) {
   // tu codigo aca
+  let arrBinario = [];
+  let cadAux='';
 
-  let dividendo = num;
-  let modulo = 0;
-  let cadAuxiliar='';
-  let cadBinario='';
- 
-  do{
-    modulo = dividendo%2;
-    dividendo = Math.floor(dividendo/2);
-    cadAuxiliar= cadAuxiliar + modulo.toString();
-
-  } while(dividendo > 0);
-
-  for(let i=0; i<cadAuxiliar.length;i++){
-    cadBinario = cadBinario + cadAuxiliar.charAt(cadAuxiliar.length-1-i);
+  while(num>=1){
+    arrBinario.push(num%2);
+    num=Math.floor(num/2);
   }
-  
-  return cadBinario;
+  cadAux=arrBinario.reverse().join('');
+
+  return cadAux;
 
 }
 
