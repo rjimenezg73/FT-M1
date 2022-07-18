@@ -1,8 +1,8 @@
-'use strict'
+let decimal=0;
+let strDecimalBinario='';
 
 function BinarioADecimal(num) {
   // tu codigo aca
-
   let suma = 0;
 
   for(let i=0; i<num.length;i++){
@@ -10,7 +10,6 @@ function BinarioADecimal(num) {
   }
 
   return suma;
-  
 }
 
 function DecimalABinario(num) {
@@ -37,7 +36,8 @@ function DecimalABinario(num) {
 }
 
 
-module.exports = {
-  BinarioADecimal,
-  DecimalABinario,
-}
+strDecimalBinario = DecimalABinario(225);
+console.log(strDecimalBinario);
+
+decimal = BinarioADecimal('11100001');
+console.log(decimal);
