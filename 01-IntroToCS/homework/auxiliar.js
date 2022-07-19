@@ -12,39 +12,19 @@ function BinarioADecimal(num) {
   return suma;
 }
 
-/*function DecimalABinario(num) {
-  // tu codigo aca
-
-  let dividendo = num;
-  let modulo = 0;
-  let cadAuxiliar='';
-  let cadBinario='';
- 
-  do{
-    modulo = dividendo%2;
-    dividendo = Math.floor(dividendo/2);
-    cadAuxiliar= cadAuxiliar + modulo.toString();
-
-  } while(dividendo > 0);
-
-  for(let i=0; i<cadAuxiliar.length;i++){
-    cadBinario = cadBinario + cadAuxiliar.charAt(cadAuxiliar.length-1-i);
-  }
-  
-  return cadBinario;
-
-}*/
 
 function DecimalABinario(num){
   //Tu código acá
   let arrBinario = [];
+  let arrBinarioR = [];
   let cadAux='';
 
   while(num>=1){
     arrBinario.push(num%2);
     num=Math.floor(num/2);
   }
-  cadAux=arrBinario.reverse().join('');
+  arrBinarioR = arrBinario.reverse();
+  cadAux=arrBinario.join('');
 
   return cadAux;
 }

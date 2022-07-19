@@ -16,13 +16,15 @@ function BinarioADecimal(num) {
 function DecimalABinario(num) {
   // tu codigo aca
   let arrBinario = [];
+  let arrBinarioR = [];
   let cadAux='';
 
   while(num>=1){
     arrBinario.push(num%2);
     num=Math.floor(num/2);
   }
-  cadAux=arrBinario.reverse().join('');
+  arrBinarioR = arrBinario.reverse();
+  cadAux=arrBinario.join('');
 
   return cadAux;
 
