@@ -12,24 +12,26 @@ x = 1;
 var a = 5;
 var b = 10;
 var c = function(a, b, c) {
+   // a=8, b=9, c=10
   var x = 10;
-  console.log(x);
-  console.log(a);
+  console.log(x);  // 10
+  console.log(a);  // 8
   var f = function(a, b, c) {
-    b = a;
-    console.log(b);
-    b = c;
+     //// a=8, b=9, c=10
+    b = a;  // b=8
+    console.log(b);  //8
+    b = c;    //b=10
     var x = 5;
   }
-  f(a,b,c);
-  console.log(b);
+  f(a,b,c); 
+  console.log(b);  //9 
 }
-c(8,9,10);
-console.log(b);
-console.log(x);
+c(8,9,10);        // 10  8  8  9  
+console.log(b);  // 10
+console.log(x);   // 1
 ```
 
-```javascript
+```javascript   ej.2
 console.log(bar);
 console.log(baz);
 foo();
@@ -38,7 +40,7 @@ var bar = 1;
 baz = 2;
 ```
 
-```javascript
+```javascript ej 3
 var instructor = "Tony";
 if(true) {
     var instructor = "Franco";
@@ -46,7 +48,7 @@ if(true) {
 console.log(instructor);
 ```
 
-```javascript
+```javascript  ej 4
 var instructor = "Tony";
 console.log(instructor);
 (function() {
@@ -58,7 +60,7 @@ console.log(instructor);
 console.log(instructor);
 ```
 
-```javascript
+```javascript ej 5
 var instructor = "Tony";
 let pm = "Franco";
 if (true) {
@@ -74,7 +76,7 @@ console.log(pm);
 
 ¿Cuál crees que será el resultado de la ejecución de estas operaciones?:
 
-```javascript
+```javascript  ej 6
 6 / "3"
 "2" * "3"
 4 + 5 + "px"
@@ -116,7 +118,7 @@ test();
 
 Y el de este código? :
 
-```javascript
+```javascript   ej 8
 var snack = 'Meow Mix';
 
 function getFood(food) {
