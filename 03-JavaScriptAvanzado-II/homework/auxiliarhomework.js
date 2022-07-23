@@ -26,6 +26,20 @@ function counter() {
   };
 }
 
+/*
+let contador = counter();
+console.log('Contador 1: ',contador());
+console.log('Contador 1: ',contador());
+console.log('Contador 1: ',contador());
+let contador2 = counter();
+console.log('Contador 2: ',contador2());
+console.log('Contador 2: ',contador2());
+console.log('Contador 1: ',contador());
+*/
+
+
+//*************************************************************************** 
+
 function cacheFunction(cb) {
   /*
   Ejercicio 2
@@ -46,20 +60,36 @@ function cacheFunction(cb) {
   squareCache(5)    // no volverá a invocar a square, simplemente buscará en la caché cuál es el resultado de square(5) y lo retornará (tip: si usaste un objeto, podés usar hasOwnProperty) 
 
   */
+ var auxCache={};
 
-  var auxCache={};
-
-  return function(argumento){
-    if(auxCache.hasOwnProperty(argumento)){
-      return auxCache[argumento];
-    }
-    else{
-      auxCache[argumento]=cb(argumento);
-      return auxCache[argumento];
-    }
-  }
-
+ return function(argumento){
+   if(auxCache.hasOwnProperty(argumento)){
+     return auxCache[argumento];
+   }
+   else{
+     auxCache[argumento]=cb(argumento);
+     return auxCache[argumento];
+   }
+ }
 }
+
+
+const cb=function(x){
+  return x*x;
+};
+
+const cache=cacheFunction(cb);
+
+const val1 = cache(2);
+console.log(val1);
+const val2 = cache(5);
+console.log(val2);
+const val3 = cache(2);
+console.log(val3);
+
+
+
+//************************************************************************** */
 
 // Bind
 
@@ -89,6 +119,13 @@ let getNombreInstructor=getNombre.bind(instructor);
 let getNombreAlumno=getNombre.bind(alumno);
 
 /*
+console.log(getNombreInstructor());
+console.log(getNombreAlumno());
+*/
+
+//************************************************************************* */
+
+/*
   Ejercicio 4
   
   Sin modificar la función crearCadena, usar bind para guardar, en las tres variables declaradas a continuación, tres funciones que retornen una cadena (string) y el delimitador especificado (asteriscos, guiones, y guiones bajos, respectivamente). Las funciones obtenidas deberían recibir solamente un argumento - la cadena de texto - ya que los otros argumentos habrán sido "bindeados". 
@@ -102,15 +139,15 @@ let textoAsteriscos = crearCadena.bind(this,'*','*');
 let textoGuiones = crearCadena.bind(this,'-','-');
 let textoUnderscore = crearCadena.bind(this,'_','_'); 
 
+
+/*
+console.log(textoAsteriscos('Roberto Jimenez'));
+console.log(textoGuiones('Roberto Jimenez'));
+console.log(textoUnderscore('Roberto Jimenez'));
+*/
+
+
 // No modifiquen nada debajo de esta linea
 // --------------------------------
 
-module.exports = {
-  counter,
-  cacheFunction,
-  getNombreInstructor,
-  getNombreAlumno,
-  textoAsteriscos,
-  textoGuiones,
-  textoUnderscore,
-};
+
